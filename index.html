@@ -46,7 +46,7 @@
 					<a class="navbar-item" href="#grid-layout">Grid система</a>
 					<a class="navbar-item" href="#components">Компоненти</a>
 					<a class="navbar-item" href="#forms">Форми</a>
-					<a class="navbar-item" href="#helpers">Helpers</a>
+					<a class="navbar-item" href="#helpers">Помощни класове</a>
 					<a class="navbar-item" href="#templates">Шаблони</a>
 					<a href="#responsive" class="navbar-item">Адаптивност</a>
 					<a href="#advantages" class="navbar-item">Предимства</a>
@@ -61,10 +61,18 @@
 		<div class="container content">
 			<h1 class="title">Въведение</h1>
 			<p>
-				Bulma е модерен CSS framework, базиран изцяло на Flexbox. Той предлага лесен и интуитивен начин за изграждане на адаптивни уеб интерфейси, без нужда от JavaScript. Популярен е сред уеб разработчиците заради простотата и четимия си синтаксис. Създаден е с идеята да предостави бърз старт за изграждане на елегантни и отзивчиви интерфейси.
+				Bulma е модерен CSS framework (рамка за стилизиране и разположение), 
+				базиран изцяло на Flexbox (Модел на CSS уеб оформление, което позволява адаптивните елементи в 
+				рамките на контейнер да бъдат автоматично подредени в зависимост от размера на прозореца за изглед).
+				Bulma предлага лесен и интуитивен начин за 
+				изграждане на адаптивни уеб интерфейси, без нужда от JavaScript. 
+				Популярен е сред уеб разработчиците заради простотата и четимия си синтаксис. 
+				Създаден е с идеята да предостави бърз старт за изграждане на елегантни и отзивчиви 
+				интерфейси.
 			</p>
 			<p>
-				Bulma е изцяло с отворен код и се поддържа активно от общността. Той позволява на разработчиците да създават семантично оформени HTML компоненти с минимално количество CSS код.
+				Bulma е изцяло с отворен код и се поддържа активно от общността. Той позволява на разработчиците да създават 
+				семантично оформени HTML компоненти с минимално количество CSS код.
 			</p>
 		</div>
 	</section>
@@ -87,7 +95,9 @@
 		<div class="container content">
 			<h2 class="title">Инсталация и настройка</h2>
 			<p>
-				Има няколко начина за инсталиране на Bulma. Най-бързият е чрез използване на CDN:
+				Има няколко начина за инсталиране на Bulma. Най-бързият е чрез използване на CDN (мрежа за доставка на съдържание - система от разпределени
+				сървъри, които съхраняват копия на уеб съдържанието на множество локации по света, като по този начин подобряват производителността 
+				за зареждане на съдържанието на уеб страниците):
 			</p>
 			<pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"&gt;</code></pre>
 
@@ -191,7 +201,7 @@
 	<!-- Секция: Utility класове (Helpers) -->
 	<section id="helpers" class="section">
 		<div class="container content">
-			<h2 class="title">Utility класове (Helpers)</h2>
+			<h2 class="title">Помощни класове (Helpers)</h2>
 			<p>
 				Bulma включва удобни помощни класове за стилове като отстояние, цветове, подравняване и видимост.
 			</p>
@@ -199,19 +209,27 @@
 			<h5 class="pl-3">1) За отстояние:</h5>
 			<p>
 				Bulma осигурява margin m* и padding p* във всички посоки: <br>
+				
+				<ul>
+					<li>*t за отгоре</li>
+					<li>*r за дясно</li>
+					<li>*b за отдолу</li>
+					<li>*l за ляво</li>
+					<li>*x хоризонтално за ляво и дясно</li>
+					<li>
+						*y вертикално както за горната, така и за долната част <br>
+						трябва да комбинирате префикс за margin със суфикс за посока.<br>
+						
+					</li>
+				</ul>
 
-				*t за отгоре <br>
-				*r за дясно <br>
-				*b за отдолу <br>
-				*l за ляво <br>
-				*x хоризонтално за ляво и дясно <br>
-				*y вертикално както за горната, така и за долната част <br>
-				трябва да комбинирате префикс за margin със суфикс за посока.<br><br>
-				Например: <br>
+				Например:
+				<ul>
+					<li>за <strong>margin-top</strong> използвайте <strong>mt-*</strong></li>
+					<li>за <strong>padding-bottom</strong> използвайте <strong>pb-*</strong></li>
+					<li>както за <strong>margin-left</strong>, така и за <strong>margin-right</strong>, използвайте <strong>mx-*</strong></li>
+				</ul>
 
-				за <strong>margin-top</strong> използвайте <strong>mt-*</strong><br>
-				за <strong>padding-bottom</strong> използвайте <strong>pb-*</strong><br>
-				както за <strong>margin-left</strong>, така и за <strong>margin-right</strong>, използвайте <strong>mx-*</strong><br>
 				Всяка от тези комбинации свойство-посока трябва да бъде добавена с един от 6 суфикса на стойност:
 				<table class="table is-bordered">
 					<thead>
@@ -385,9 +403,8 @@
 				Едно от най-големите предимства на Bulma е, че може лесно да бъде персонализирана чрез промяна на SASS променливите. Това позволява промяна на цветове, размери на шрифтове, отстояния и други основни стилове без писане на допълнителен CSS код.
 			</p>
 
-			<h3 class="title is-5">Как да променим основния цвят:</h3>
-			<pre><code>// Промяна на основния цвят
-$primary: #ff3860;
+			<!-- <h3 class="title is-5">Как да променим основния цвят:</h3> -->
+			<pre><code>$primary: #ff3860;
 @import "bulma";</code></pre>
 			<figcaption>Код.1. Промяна на основен цвят <span class="citations-number">[4]</span></figcaption>
 
@@ -426,12 +443,6 @@ $primary: #ff3860;
 					</ul>
 				</div>
 			</div>
-
-			<figure>
-				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ykyS18mfbn1rTWFjDle34duE3FnKCt9svQ&s" alt="Advantages of Bulma">
-				<figcaption>Фиг. 7: Предимства на Bulma <span class="citations-number">[5]</span></figcaption>
-			</figure>
-
 		</div>
 	</section>
 
@@ -548,7 +559,7 @@ $primary: #ff3860;
 			</p>
 			<p>
 				<span class="citations-number">[2]</span> GeeksforGeeks, "Introduction to Bulma CSS Framework", 
-					<a href="https://www.geeksforgeeks.org/bulma-css-framework/" target="_blank">https://www.geeksforgeeks.org/bulma-css-framework/</a>, последно посетен на 2025-04-25.
+					<a href="https://www.geeksforgeeks.org/html/bulma-introduction/" target="_blank">https://www.geeksforgeeks.org/html/bulma-introduction/</a>, последно посетен на 2025-04-25.
 			</p>
 			<p>
 				<span class="citations-number">[3]</span> HTMLRev, "Free Bulma Templates", 
